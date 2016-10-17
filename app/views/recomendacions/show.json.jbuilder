@@ -1,0 +1,1 @@
+json.partial! "recomendacions/recomendacion", recomendacion: @recomendacion

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @condicion.userID %>
+</p>
+
+<p>
+  <strong>Leido:</strong>
+  <%= @condicion.leido %>
+</p>
+
+<%= link_to 'Edit', edit_condicion_path(@condicion) %> |
+<%= link_to 'Back', condicions_path %>

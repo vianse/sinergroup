@@ -1,0 +1,11 @@
+/* White Dropdown No Line */
+.dropdown-menu { background: #fdfdfd; }
+@media (min-width: 768px) {
+.dropdown-menu > li { border-bottom: none; }
+}
+.dropdown-menu > li > a { color: #555555; }
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus { color: #ffffff; }
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus { color: #ffffff; }
+.yamm .yamm-content { color: #555555; }
+.yamm .yamm-content h4 { color: #555555; }
+.yamm .yamm-content .icon-arrow-list li a { color: #555555; }

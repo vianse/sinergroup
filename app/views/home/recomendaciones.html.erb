@@ -1,0 +1,42 @@
+<div class="row">
+<div class="col-md-1 sidebar-line"></div>
+  <div class="col-md-10 sidebar-line">
+<h1>RECOMENDACIONES</h1>
+<p>La información contenida en ésta página no debe reemplazar las recomendaciones e indicaciones proporcionadas por su médico. </p>
+<p>Las Materias primas que aquí se ofrecen, son productos importados y probados desde hace muchos años en el mercado, pero no dejan de ser suplementos nutricionales y como tales no están sujetos a las mismas estrictas reglamentaciones requeridas para los fármacos o alimentos de venta libre y sin receta. </p>
+<p>Por consiguiente, si decide tomar cualquier de nuestros suplementos, lo hará por su cuenta y antes de hacerlo le Recomendamos que Consulte a su médico.</p>
+<p>Es importante que <strong>NO</strong> interrumpa ni redúzcala dosis de los medicamentos recetados que toma actualmente hasta consultar al doctor </p>
+<p>“El consumo de estos suplementos es responsabilidad de quien los adquiere y consume”. </p>
+
+
+<%= form_for(@recomendacion) do |f| %>
+  <% if @recomendacion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recomendacion.errors.count, "error") %> prohibited this recomendacion from being saved:</h2>
+
+      <ul>
+      <% @recomendacion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :userID, :value => current_user.id %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :leido, :value=> 1 %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Acepto", :class=> "btn btn-info" %>
+  </div>
+<% end %>
+
+
+</div>
+<div class="col-md-1 sidebar-line"></div>
+
+</div>
+
+

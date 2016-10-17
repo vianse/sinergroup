@@ -1,0 +1,24 @@
+
+/* Menu Hover 2 */
+.navbar-default .navbar-nav > li > a {
+	-webkit-box-shadow: inset 0px 4px 0px transparent;
+	box-shadow: inset 0px 4px 0px transparent;
+}
+.navbar-default .navbar-nav > li > a:hover, 
+.navbar-default .navbar-nav > li > a:focus {
+	-webkit-box-shadow: inset 0px 4px 0px #cc9966;
+	box-shadow: inset 0px 4px 0px #cc9966;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+	-webkit-box-shadow: inset 0px 4px 0px #cc9966;
+	box-shadow: inset 0px 4px 0px #cc9966;
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+	-webkit-box-shadow: inset 0px 4px 0px #cc9966;
+	box-shadow: inset 0px 4px 0px #cc9966;
+}
+

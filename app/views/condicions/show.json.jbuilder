@@ -1,0 +1,1 @@
+json.partial! "condicions/condicion", condicion: @condicion

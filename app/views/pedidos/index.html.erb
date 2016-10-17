@@ -1,0 +1,91 @@
+<style type="text/css">
+  .product-name {
+    width: 30%!important;
+  }
+  .product-date {
+    width: 50%!important;
+  }
+</style>
+  <!-- Top Bar
+================================================== -->
+  <div id="topbar">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <ul class="topbar-contact">
+            <li><i class="fa fa-phone-square"></i>01 (442) 2186601</li>
+            <li><i class="fa fa-mobile"></i>442 275 5685 / 442 174 0218</li>
+            <li>|</li>
+            <li class="language dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language"></i>Español <i class="fa fa-angle-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">English</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- end .topbar-contact --> 
+        </div>
+        <!-- end .col-md-8 -->
+        
+         <div class="col-md-4">
+          <ul class="social-icons pull-right">
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+          <!-- end .social-icons --> 
+          
+        </div>
+        <!-- end .col-md-4 --> 
+      </div>
+      <!-- end .row --> 
+    </div>
+    <!-- end .container --> 
+  </div>
+  <!-- end #topbar --> 
+<%= render "header" %>
+<div class="row">
+      <div class="col-md-1 sidebar-line"></div>
+      <div class="col-md-10 sidebar-line">
+        <%= link_to 'Crear Pedido', new_pedido_path, :class=>"btn btn-theme" %>
+
+        <div class="table-responsive">
+          <table class="table table-middle">
+            <thead>
+              <tr>
+                <th class="product-name">Número de Pedido</th>
+                <th class="product-name">Pedido</th>
+                <th class="product-price">Estatus</th>
+                <th class="product-date">Fecha de Pedido</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+            <tbody>
+               <% @pedidos.each do |pedido| %>
+                <tr class="alert fade in">
+                  <td class="product-name"><h4><%= pedido.id %></h4>
+                  </td>
+                  <td class="product-name"><h5><%= pedido.titulo %></h5>
+                  </td>
+                  <td class="product-price"><%= pedido.estatus %></td>
+                  <td class="product-price">
+                    <%= pedido.created_at.strftime("%d/%m/%Y") %>
+                  </td>
+                  <% if pedido.estatus == "Enviado" %>
+                 
+                  <% else %>
+                   <td><%= link_to 'Agregar Productos al pedido', edit_pedido_path(pedido), :class=>"btn btn-success" %></td>
+                    <td><%= link_to 'Eliminar Pedido', pedido, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger" %></td>
+                   <% end %>
+
+                 
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <!-- end .table-responsive --> 
+        <div class="clearfix mb-50"></div>
+        <!-- end .mb-50 --> 
+      </div>
+      <div class="col-md-1 sidebar-line"></div>
+</div>

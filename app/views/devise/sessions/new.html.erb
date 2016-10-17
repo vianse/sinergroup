@@ -1,0 +1,25 @@
+
+<%= render "header_login" %>
+<div class="row">
+  <div class="col-md-4 sidebar-line"></div>
+  <div class="col-md-4 sidebar-line">
+
+<h2>Iniciar sesión</h2>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label "Ingresa tu correo electronico" %><br />
+    <%= f.email_field :email, autofocus: true, :class=> "form-control", :placeholder =>"example@empresa.com" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off", :class=> "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Entrar" ,:class=> "btn btn-success" %>
+  </div>
+<% end %>
+</div>
+<div class="col-md-4 sidebar-line"></div>
+</div>
+

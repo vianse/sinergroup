@@ -1,0 +1,2 @@
+module RecomendacionsHelper
+end

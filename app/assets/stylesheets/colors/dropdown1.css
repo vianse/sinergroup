@@ -1,0 +1,14 @@
+/* Transparent Black Dropdown Line */
+.dropdown-menu {
+	background-color: #555555;
+	background-color: rgba(0,0,0,0.8);
+}
+@media (min-width: 768px) {
+.dropdown-menu > li { border-bottom: 1px solid #383838; }
+}
+.dropdown-menu > li > a { color: #ffffff; }
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus { color: #ffffff; }
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus { color: #ffffff; }
+.yamm .yamm-content { color: #ffffff; }
+.yamm .yamm-content h4 { color: #ffffff; }
+.yamm .yamm-content .icon-arrow-list li a { color: #ffffff; }

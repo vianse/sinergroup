@@ -1,0 +1,6 @@
+
+/* Menu Hover 3 */
+@media (min-width: 768px) {
+.navbar-nav > li > a { font-weight: 900; }
+}
+

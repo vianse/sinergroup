@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @recomendacion.userID %>
+</p>
+
+<p>
+  <strong>Leido:</strong>
+  <%= @recomendacion.leido %>
+</p>
+
+<%= link_to 'Edit', edit_recomendacion_path(@recomendacion) %> |
+<%= link_to 'Back', recomendacions_path %>

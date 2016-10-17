@@ -1,0 +1,13 @@
+body { background: #eeeeee url("../../images/assets/colors/pattern2.png") repeat; }
+#boxed-layout {
+	max-width: 1600px!important;
+	margin: auto;
+	background: #ffffff;
+}
+#header { max-width: 1600px!important; }
+#rev_slider_fullwidth_wrapper, .rev_slider_wrapper, .fullscreen-container, #rev_slider_fullwidth, .rev_slider fullscreenbanner {
+	max-width: 1600px!important;
+	margin: auto!important;
+	left: 0!important;
+	right: 0!important;
+}

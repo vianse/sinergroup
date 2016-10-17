@@ -1,0 +1,1 @@
+json.array! @condicions, partial: 'condicions/condicion', as: :condicion

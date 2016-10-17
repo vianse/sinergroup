@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Condicions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Userid</th>
+      <th>Leido</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @condicions.each do |condicion| %>
+      <tr>
+        <td><%= condicion.userID %></td>
+        <td><%= condicion.leido %></td>
+        <td><%= link_to 'Show', condicion %></td>
+        <td><%= link_to 'Edit', edit_condicion_path(condicion) %></td>
+        <td><%= link_to 'Destroy', condicion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Condicion', new_condicion_path %>

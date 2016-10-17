@@ -1,0 +1,17 @@
+/* Topbar */
+#topbar {
+	color: #ffffff;
+	background: #36414d;
+}
+.topbar-contact > li a { color: #475766; }
+.language > a { color: #ffffff !important; }
+/* topbar social */
+#topbar .social-icons > li a i {
+	border: 1px solid transparent;
+	color: #ffffff;
+	background: transparent;
+}
+#topbar .social-icons > li a i:hover {
+	border: 1px solid transparent;
+	color: #ffffff;
+}
