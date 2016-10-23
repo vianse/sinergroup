@@ -11,10 +11,10 @@
         
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
+            <li><a href="/socios">Socios</a></li>
             <li><a href="/aislados">Aislado</a></li>
             <li><a href="/concentrados">Concentrado</a></li>
             <li><a href="/complementos">Complementos</a></li>
-            <li><a href="/socios">Socios</a></li>
             <li>
                 <% if user_signed_in? %>
                 <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
