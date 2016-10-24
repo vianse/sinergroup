@@ -30,6 +30,7 @@
 		<% end %>
 	</tbody>
 </table>
-
+<div>Comentarios: <%= Pedido.where(:id => params[:id]).pluck(:comentarios).first %></div>
+<div>Tipo de Envio: <%= Pedido.where(:id => params[:id]).pluck(:envioC).first %></div>
 </body>
 </html>

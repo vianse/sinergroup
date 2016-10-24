@@ -58,6 +58,12 @@
   <div class="actions">
     <%= f.submit "Solicitar Pedido", :class=> "btn btn-success" %>
   </div>
+  <div class="field">
+    <%= f.text_field :comentarios, :placeholder => "Escribe un comentario", :class=>"form-control" %>
+  </div>
+  <div class="field">
+    <%= f.select :envioC, options_for_select([["Enviar a cliente", "Enviar a cliente"], ["Enviar a socio", "Enviar a socio"]]), prompt: "Selecciona un tipo de envío", :class => "form-control", :required => true %>
+  </div>
   <% end %>
   <div class="field">
     <%= f.hidden_field :titulo %>

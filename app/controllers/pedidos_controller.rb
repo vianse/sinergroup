@@ -60,7 +60,8 @@ class PedidosController < ApplicationController
         RestClient.post "https://api:key-e7d79c66e74391fdf48b657624f23ddc"\
     "@api.mailgun.net/v3/sandboxb9c2dadab0ea49f6b7130d1091646c59.mailgun.org/messages",
     :from => "Sistema de Pedidos <mailgun@sandboxb9c2dadab0ea49f6b7130d1091646c59.mailgun.org>",
-    :to => "yec.rivas@gmail.com",
+    #:to => "proteina@sinergroup.com.mx",
+    :to => "juancarlos.santiago@vianse.mx",
     :subject => "Solicitud de Pedido",
     :html => (render_to_string(template: "../views/pedidos/email")).to_str
       else
@@ -92,6 +93,6 @@ class PedidosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pedido_params
-      params.require(:pedido).permit(:titulo, :estatus, :userID)
+      params.require(:pedido).permit(:titulo, :estatus, :comentarios, :envioC, :userID)
     end
 end

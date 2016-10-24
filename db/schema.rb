@@ -54,9 +54,12 @@ ActiveRecord::Schema.define(version: 20161014170609) do
   create_table "pedidos", force: :cascade do |t|
     t.string   "titulo"
     t.string   "estatus"
+    t.string   "comentarios"
+    t.string   "envioC"
+    t.string   "envioS"
     t.string   "userID"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "products", force: :cascade do |t|
