@@ -1,0 +1,1 @@
+json.array! @cardpublicos, partial: 'cardpublicos/cardpublico', as: :cardpublico

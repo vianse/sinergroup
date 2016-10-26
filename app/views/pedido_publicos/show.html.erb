@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pedido:</strong>
+  <%= @pedido_publico.pedido %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @pedido_publico.fecha %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @pedido_publico.nombre %>
+</p>
+
+<p>
+  <strong>Correo:</strong>
+  <%= @pedido_publico.correo %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @pedido_publico.telefono %>
+</p>
+
+<%= link_to 'Edit', edit_pedido_publico_path(@pedido_publico) %> |
+<%= link_to 'Back', pedido_publicos_path %>

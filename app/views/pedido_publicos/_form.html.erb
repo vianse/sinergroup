@@ -1,0 +1,78 @@
+  <!-- Top Bar
+================================================== -->
+  <div id="topbar">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <ul class="topbar-contact">
+            <li><i class="fa fa-phone-square"></i>01 (442) 2186601</li>
+            <li><i class="fa fa-mobile"></i>442 275 5685 / 442 174 0218</li>
+            <li>|</li>
+            <li class="language dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language"></i>Español <i class="fa fa-angle-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">English</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- end .topbar-contact --> 
+        </div>
+        <!-- end .col-md-8 -->
+        
+         <div class="col-md-4">
+          <ul class="social-icons pull-right">
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+          <!-- end .social-icons --> 
+          
+        </div>
+        <!-- end .col-md-4 --> 
+      </div>
+      <!-- end .row --> 
+    </div>
+    <!-- end .container --> 
+  </div>
+  <!-- end #topbar --> 
+  <%= render "header" %>
+<div class="row">
+  <div class="col-md-1 sidebar-line"></div>
+  <div class="col-md-10 sidebar-line">
+  <h1>Nuevo Pedido</h1>
+<%= form_for(@pedido_publico) do |f| %>
+  <% if @pedido_publico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pedido_publico.errors.count, "error") %> prohibited this pedido_publico from being saved:</h2>
+
+      <ul>
+      <% @pedido_publico.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pedido %><br>
+    <%= f.text_field :pedido, :class => "form-control" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :correo %><br>
+    <%= f.text_field :correo, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono %><br>
+    <%= f.text_field :telefono, :class => "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Agregar Productos" %>
+  </div>
+<% end %>
+</div>
+  <div class="col-md-1 sidebar-line"></div>
+</div>

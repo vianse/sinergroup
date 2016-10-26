@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Cardpublicos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pedidoid</th>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th>Peso</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cardpublicos.each do |cardpublico| %>
+      <tr>
+        <td><%= cardpublico.pedidoID %></td>
+        <td><%= cardpublico.producto %></td>
+        <td><%= cardpublico.cantidad %></td>
+        <td><%= cardpublico.precio %></td>
+        <td><%= cardpublico.peso %></td>
+        <td><%= link_to 'Show', cardpublico %></td>
+        <td><%= link_to 'Edit', edit_cardpublico_path(cardpublico) %></td>
+        <td><%= link_to 'Destroy', cardpublico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cardpublico', new_cardpublico_path %>

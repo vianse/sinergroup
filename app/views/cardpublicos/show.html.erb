@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pedidoid:</strong>
+  <%= @cardpublico.pedidoID %>
+</p>
+
+<p>
+  <strong>Producto:</strong>
+  <%= @cardpublico.producto %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @cardpublico.cantidad %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @cardpublico.precio %>
+</p>
+
+<p>
+  <strong>Peso:</strong>
+  <%= @cardpublico.peso %>
+</p>
+
+<%= link_to 'Edit', edit_cardpublico_path(@cardpublico) %> |
+<%= link_to 'Back', cardpublicos_path %>

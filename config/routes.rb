@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :cardpublicos
+  resources :pedido_publicos
   devise_for :admins
   get 'control/index'
 
@@ -22,6 +24,9 @@ Rails.application.routes.draw do
    get 'complementos' => 'pedidos#complementos'
    get 'reglas' => 'home#condiciones'
    get 'email' => 'pedidos#email'
+   post 'email' => 'cardpublicos#email'
+   get 'shop' => 'pedido_publicos#new'
+   get 'carpublico' => 'cardpublicos#new'
    post '/crear_producto', :to =>  'cars#crearcar'
 
    namespace :api do

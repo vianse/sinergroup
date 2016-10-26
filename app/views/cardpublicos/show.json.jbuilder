@@ -1,0 +1,1 @@
+json.partial! "cardpublicos/cardpublico", cardpublico: @cardpublico

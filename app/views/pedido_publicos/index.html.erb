@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Pedido Publicos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pedido</th>
+      <th>Fecha</th>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th>Telefono</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pedido_publicos.each do |pedido_publico| %>
+      <tr>
+        <td><%= pedido_publico.pedido %></td>
+        <td><%= pedido_publico.fecha %></td>
+        <td><%= pedido_publico.nombre %></td>
+        <td><%= pedido_publico.correo %></td>
+        <td><%= pedido_publico.telefono %></td>
+        <td><%= link_to 'Show', pedido_publico %></td>
+        <td><%= link_to 'Edit', edit_pedido_publico_path(pedido_publico) %></td>
+        <td><%= link_to 'Destroy', pedido_publico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pedido publico', new_pedido_publico_path %>

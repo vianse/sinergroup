@@ -1,0 +1,1 @@
+json.partial! "pedido_publicos/pedido_publico", pedido_publico: @pedido_publico
