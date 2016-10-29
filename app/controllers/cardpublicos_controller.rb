@@ -18,7 +18,7 @@ class CardpublicosController < ApplicationController
     "@api.mailgun.net/v3/sandboxb9c2dadab0ea49f6b7130d1091646c59.mailgun.org/messages",
     :from => "Sistema de Pedidos <mailgun@sandboxb9c2dadab0ea49f6b7130d1091646c59.mailgun.org>",
     #:to => "proteina@sinergroup.com.mx",
-    :to => "juancarlos.santiago@vianse.mx",
+    :to => "proteina@sinergroup.com.mx",
     :subject => "Solicitud de Pedido",
     :html => (render_to_string(template: "../views/cardpublicos/email")).to_str
     redirect_to "http://sinergroup.com.mx/"
