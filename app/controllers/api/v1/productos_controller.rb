@@ -6,7 +6,7 @@ class Api::V1::ProductosController <ApplicationController
    @productos = Product.select(:costo,:descripcion).where(:descripcion => @carrito)
    productos = @productos.map do |b|
     @cantidad = Car.where(:productoID => b.descripcion).where(:pedidoID =>params[:pedido]).pluck(:cantidad).first
-    b.costo.to_f * @cantidad.to_f
+    b.costo[1..3].to_f * @cantidad.to_f
     #b.costo.to_f #* @cantidad.to_f
     
    end

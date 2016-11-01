@@ -39,7 +39,7 @@ class CardpublicosController < ApplicationController
   # POST /cardpublicos.json
 
   def crearcar
-    @car = Cardpublico.new(:pedidoID => params[:pedidoID], :producto=> params[:producto], :cantidad=> params[:cantidad], :precio => (Product.where(:descripcion => params[:producto]).pluck(:costo).first.to_i) * (params[:cantidad].to_i))
+    @car = Cardpublico.new(:pedidoID => params[:pedidoID], :producto=> params[:producto], :cantidad=> params[:cantidad], :precio => (Product.where(:descripcion => params[:producto]).pluck(:costo).first) * (params[:cantidad].to_i))
      respond_to do |format|
       if @car.save
         # @consultore.update(:access => true)
