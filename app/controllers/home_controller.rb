@@ -4,7 +4,7 @@ class HomeController < ApplicationController
     @condicion = Condicion.new
   	@condiciones = Condicion.where(:userID => current_user.id).pluck(:leido).first
   	if @condiciones == "1" 
-  		redirect_to "/recomendaciones"
+  		redirect_to "/pedidos"
   	else
   		redirect_to "/reglas"
   	end

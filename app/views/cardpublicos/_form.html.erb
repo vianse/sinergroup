@@ -38,35 +38,29 @@
   <div class="row">
   <div class="col-md-1 sidebar-line"></div>
   <div class="col-md-10 sidebar-line">
-<%= form_for(@cardpublico) do |f| %>
-  <% if @cardpublico.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@cardpublico.errors.count, "error") %> prohibited this cardpublico from being saved:</h2>
-
-      <ul>
-      <% @cardpublico.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+    <p>Cuentas Bancarias</p>
+    <p><strong>BBVA Bancomer</strong></p>
+    <p>Razón Social: SINERGROUP S DE RL</p>
+    <p>No Cta. 0107787693</p>
+    <p>Clave: 012680001077876933</p>
+<%= form_tag :controller => 'cardpublicos', :action => 'crearcar', :method => 'post' do %>
+  <div class="field">
+    <%= hidden_field_tag :pedidoID, nil,:value => params[:pedidoID], :class=>"form-control" %>
+  </div>
+  <div class="field">
+    <%= label_tag :cantidad %><br>
+    <%= text_field_tag :cantidad, nil,:class=>"form-control", :required=>true %>
+  </div>
+  <div class="field">
+    <%= select_tag :producto, options_for_select(@productos), prompt: "Selecciona un producto", :class => "form-control tamano" %>
+  </div>
+  
+  
+  <div class="actions">
+    <%= submit_tag "Agregar a carrito", :class => "btn btn-warning" %>
+  </div>
   <% end %>
 
-  <div class="field">
-    <%= f.hidden_field :pedidoID, :class=> "form-control", :value => params[:pedidoID] %>
-  </div>
-  <div class="field">
-    <%= f.label "Selecciona un producto" %><br>
-    
-    <%= f.select :producto, options_for_select(@productos), prompt: "Selecciona un producto", :class => "form-control", :required => true %>
-  </div>
-  <div class="field">
-    <%= f.label "Cantidad" %><br>
-    <%= f.text_field :cantidad, :class=> "form-control", :required => true %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Agregar producto", :class=> "btn btn-info" %>
-  </div>
-<% end %>
 </div>
   <div class="col-md-1 sidebar-line"></div>
 </div>
@@ -76,7 +70,7 @@
 <div class="col-md-10 sidebar-line">
   <div class="table-responsive">
   <h1>Mi carrito</h1>
-
+<strong><div id="total"></div></strong>
 <table class="table table-middle">
   <thead>
     <tr>
@@ -114,3 +108,45 @@
 </div>
 <div class="col-md-1 sidebar-line"></div>
 </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+<script src="https://rawgit.com/arqex/react-json/master/build/Json.js"></script>
+<script src="//cdn.jsdelivr.net/refluxjs/0.2.11/reflux.min.js"></script>
+<script type="text/jsx">
+
+var url = "/api/v1/productos_publicos?pedido=<%= params[:pedidoID] %>" 
+var Total = React.createClass({
+           getInitialState: function() {
+              return {
+                data: ""
+              };
+            },
+            componentDidMount: function() {
+              var self = this;
+              $.get(this.props.source, function(result) {
+                var collection = result;
+                if (this.isMounted()) {
+                  this.setState({
+                    data: collection
+                  });
+                }
+              }.bind(this));
+            },
+            render: function() {   
+              
+              return (
+                <span>
+                 <h1>Total $ {this.state.data}  </h1>   
+                </span>
+              );
+            }
+          });
+
+         React.render(
+        <Total source={url} />,
+          document.getElementById('total')
+     );
+
+</script>

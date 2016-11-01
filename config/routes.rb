@@ -25,13 +25,15 @@ Rails.application.routes.draw do
    get 'reglas' => 'home#condiciones'
    get 'email' => 'pedidos#email'
    post 'email' => 'cardpublicos#email'
-   get 'shop' => 'pedido_publicos#new'
+   get 'shop' => 'pedido_publicos#advertencia'
+   get 'tienda' => 'pedido_publicos#new'
    get 'carpublico' => 'cardpublicos#new'
    post '/crear_producto', :to =>  'cars#crearcar'
-
+   post '/crear_producto_publico', :to =>  'cardpublicos#crearcar'
    namespace :api do
     namespace :v1 do
       resources :productos, path: "productos"
+      resources :productos_publicos, path: "productos_publicos"
     end
   end
 

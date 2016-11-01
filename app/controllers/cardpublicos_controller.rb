@@ -37,9 +37,22 @@ class CardpublicosController < ApplicationController
 
   # POST /cardpublicos
   # POST /cardpublicos.json
+
+  def crearcar
+    @car = Cardpublico.new(:pedidoID => params[:pedidoID], :producto=> params[:producto], :cantidad=> params[:cantidad], :precio => (Product.where(:descripcion => params[:producto]).pluck(:costo).first.to_i) * (params[:cantidad].to_i))
+     respond_to do |format|
+      if @car.save
+        # @consultore.update(:access => true)
+        format.html { redirect_to :back, notice: 'User was successfully created.' }
+      else
+        format.html { render action: "new" }
+      end
+    end
+  end
   def create
     @cardpublico = Cardpublico.new(cardpublico_params)
-
+    #@precio = Product.where(:descripcion => params[:productos])
+    #@cardpublico = Cardpublico.new(:pedidoID => params[:pedidoID], :producto=> params[:producto], :cantidad=> params[:cantidad], :precio=> @precio)
     respond_to do |format|
       if @cardpublico.save
         format.html { redirect_to :back, notice: 'Cardpublico was successfully created.' }
