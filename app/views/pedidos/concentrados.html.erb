@@ -85,7 +85,8 @@ background-image: url(http://sinergroup.com.mx/images/assets/back-to-top.png)!im
   
   <!-- Header
 ================================================== -->
-<%= render "header" %>
+   <%= render "header" %>
+  <!-- end #header -->
   <div class="clearfix"></div>
   <!-- end .clearfix --> 
   
@@ -181,7 +182,7 @@ background-image: url(http://sinergroup.com.mx/images/assets/back-to-top.png)!im
           <thead>
             <tr>
               <th>#</th>
-              <th>Nombre</th>
+              <th>Parámetros</th>
               <th>%</th>
             </tr>
           </thead>
@@ -225,7 +226,7 @@ background-image: url(http://sinergroup.com.mx/images/assets/back-to-top.png)!im
           <thead>
             <tr>
               <th>#</th>
-              <th>Nombre</th>
+              <th>Parámetros</th>
               <th>Cantidad</th>
             </tr>
           </thead>
@@ -354,7 +355,7 @@ background-image: url(http://sinergroup.com.mx/images/assets/back-to-top.png)!im
           <thead>
             <tr>
               <th>#</th>
-              <th>Nombre</th>
+              <th>Parámetros</th>
               <th>Cantidad</th>
             </tr>
           </thead>
@@ -372,7 +373,7 @@ background-image: url(http://sinergroup.com.mx/images/assets/back-to-top.png)!im
             <tr>
               <td>3</td>
               <td>Hongos y Levaduras...</td>
-              <td><50 cfu/g</td>
+              <td><10 cfu/g</td>
             </tr>
             <tr>
               <td>4</td>
@@ -580,7 +581,7 @@ background-image: url(http://sinergroup.com.mx/images/assets/back-to-top.png)!im
       
       <div class="col-md-3">
         <div class="iconbox1">
-          <div class="iconbox1-icon"><a href="http://sinergroup.com.mx/pdf/Precios_CP.pdf" target="_blank"><i class="fa fa-usd effect-8"></i></a></div>
+          <div class="iconbox1-icon"><a href="pdf/Precios_CP.pdf" target="_blank"><i class="fa fa-usd effect-8"></i></a></div>
           <h4>Lista de Precios</h4>
           <p>Descarga PDF</p>
         </div>
@@ -589,7 +590,7 @@ background-image: url(http://sinergroup.com.mx/images/assets/back-to-top.png)!im
       
       <div class="col-md-3">
         <div class="iconbox1">
-          <div class="iconbox1-icon"><a href="http://sinergroup.com.mx/pdf/Cost_bon_CP.pdf" target="_blank"><i class="fa fa-bar-chart effect-8"></i></a></div>
+          <div class="iconbox1-icon"><a href="pdf/Cost_bon_CP.pdf" target="_blank"><i class="fa fa-bar-chart effect-8"></i></a></div>
           <h4>Costo - Beneficio</h4>
           <p>Descraga PDF</p>
         </div>
@@ -598,7 +599,7 @@ background-image: url(http://sinergroup.com.mx/images/assets/back-to-top.png)!im
       
       <div class="col-md-3">
         <div class="iconbox1">
-          <div class="iconbox1-icon"><a href="http://sinergroup.herokuapp.com/" target="_blank"><i class="fa fa-cart-plus effect-8"></i></a></div>
+          <div class="iconbox1-icon"><a href="/" target="_blank"><i class="fa fa-cart-plus effect-8"></i></a></div>
           <h4>Tienda</h4>
           <p>Hacer pedido</p>
         </div>
@@ -637,14 +638,14 @@ background-image: url(http://sinergroup.com.mx/images/assets/back-to-top.png)!im
   </div>
   <!-- end #footer-top --> 
   
-  <!-- Footer
+   <!-- Footer
 ================================================== -->
-   <footer id="footer">
+  <footer id="footer">
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <div class="footer-about"> <a href="http://sinergroup.com.mx/index.html"><img src="http://sinergroup.com.mx/images/logo-footer.png" alt="" /></a>
-            <p>Empresa de OUT SOURCING que inicia operaciones en enero 2004, cuenta con 11 personas ofreciendo algunas materias primas específicas para la industria de alimentos y consultoría en línea.</p>
+          <div class="footer-about"> <a href="index.html"><img src="http://sinergroup.com.mx/images/logo-footer.png" alt="" /></a>
+            <p align="justify">Empresa especializada en INGENIERÍA EN ALIMENTOS que inicia operaciones en enero 2004, cuenta con materias primas especificas para la industria de alimentos y complementos nutricionales.</p>
             <div class="mb-20"></div>
             <!-- end .mb-20 -->
             <ul class="social-icons social-color">
@@ -657,34 +658,33 @@ background-image: url(http://sinergroup.com.mx/images/assets/back-to-top.png)!im
           <!-- end .footer-about --> 
         </div>
         <!-- end .col-md-3 -->
-        
+
         <div class="col-md-3">
           <h4>Popular</h4>
           <div class="titleline-footer"></div>
           <!-- end .titleline-footer -->
           <ul class="footer-list">
-            <li><i class="fa fa-angle-right"></i><a href="#">Quienes Somos</a></li>
-            <li><i class="fa fa-angle-right"></i><a href="#">Nuestros Productos</a></li>
-            <li><i class="fa fa-angle-right"></i><a href="#">Últimas noticias</a></li>
-            <li><i class="fa fa-angle-right"></i><a href="#">Proyectos</a></li>
+            <li><i class="fa fa-angle-right"></i><a href="/socios">Socios</a></li>
+            <li><i class="fa fa-angle-right"></i><a href="/aislado">Aislado</a></li>
+            <li><i class="fa fa-angle-right"></i><a href="/complementos">Complementos</a></li>
           </ul>
         </div>
         <!-- end .col-md-3 -->
-        
-        
+                    
         <div class="col-md-3">
           <h4>Contacto</h4>
           <div class="titleline-footer"></div>
           <!-- end .titleline-footer -->
           <ul class="footer-list">
             <li><i class="fa fa-map-marker"></i><span>Dirección:</span><br>
-              Jurica, Querétaro, México.</li>
+              Prol. Corregidora Norte No. 1106 local “A”, Col. Arboledas, Qro. C.P. 76140.</li>
             <li><i class="fa fa-phone"></i><span>Teléfono:</span><br>
               01 (442) 2186601</li>
               <li><i class="fa fa-mobile"></i><span>Celular:</span><br>
                442 275 5685 / 442 174 0218</li>
             <li><i class="fa fa-envelope"></i><span>E-mail:</span><br>
-              <a href="mailto:#">mail@sinergroup.com.mx</a></li>
+              <a href="mailto:#">oficina@sinergroup.com.mx</a>
+              <a href="mailto:#">proteina@sinergroup.com.mx</a></li>
           </ul>
         </div>
         <!-- end .col-md-3 --> 
@@ -693,7 +693,7 @@ background-image: url(http://sinergroup.com.mx/images/assets/back-to-top.png)!im
     </div>
     <!-- end .container --> 
   </footer>
-  <!-- end #footer --> 
+  <!-- end #footer -->  
   
   <!-- Copyright
 ================================================== -->

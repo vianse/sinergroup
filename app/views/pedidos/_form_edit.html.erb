@@ -105,7 +105,7 @@
   </div>
   
   <div class="field">
-    <%= hidden_field_tag :costo,nil,:value=> Product.where(:descripcion => params[:pedidoID]).pluck(:costo).first, :class=>"form-control" %>
+    <%= hidden_field_tag :costo,:value=> Product.where(:descripcion => params[:id]).pluck(:costo), :class=>"form-control" %>
   </div>
   <div class="field">
     <%= hidden_field_tag :userID, nil,:class=>"form-control",:value=> current_user.id %>

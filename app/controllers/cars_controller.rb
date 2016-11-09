@@ -18,7 +18,10 @@ class CarsController < ApplicationController
   end
 
   def crearcar
-      @car = Car.new(:pedidoID => params[:pedidoID], :cantidad => params[:cantidad], :productoID => params[:productoID], :costo => params[:costo], :userID => params[:userID])
+      @car = Car.new(:pedidoID => params[:pedidoID], 
+        :cantidad => params[:cantidad],
+         :productoID => params[:productoID], 
+         :costo => Product.where(:descripcion => params[:productoID]).pluck(:costo).first, :userID => params[:userID])
      respond_to do |format|
       if @car.save
         # @consultore.update(:access => true)
