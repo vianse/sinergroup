@@ -28,6 +28,7 @@ Rails.application.routes.draw do
    get 'shop' => 'pedido_publicos#advertencia'
    get 'tienda' => 'pedido_publicos#new'
    get 'carpublico' => 'cardpublicos#new'
+   get 'gracias' => 'cardpublicos#gracias'
    post '/crear_producto', :to =>  'cars#crearcar'
    post '/crear_producto_publico', :to =>  'cardpublicos#crearcar'
    namespace :api do

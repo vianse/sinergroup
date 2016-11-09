@@ -6,7 +6,9 @@ class PedidoPublicosController < ApplicationController
   def index
     @pedido_publicos = PedidoPublico.all
   end
-
+  def advertencia
+    
+  end
   # GET /pedido_publicos/1
   # GET /pedido_publicos/1.json
   def show
@@ -69,6 +71,6 @@ class PedidoPublicosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pedido_publico_params
-      params.require(:pedido_publico).permit(:pedido, :fecha, :nombre, :correo, :telefono)
+      params.require(:pedido_publico).permit(:codigopromocional,:pedido, :fecha, :nombre, :correo, :telefono, :direccion,:calles,:municipio,:codigopostal,:rfc,:razonsocial,:direccionfiscal,:municipiofiscal,:codigopostalfiscal)
     end
 end

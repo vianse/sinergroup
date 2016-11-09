@@ -48,12 +48,14 @@
     <%= hidden_field_tag :pedidoID, nil,:value => params[:pedidoID], :class=>"form-control" %>
   </div>
   <div class="field">
-    <%= label_tag :cantidad %><br>
-    <%= text_field_tag :cantidad, nil,:class=>"form-control", :required=>true %>
+    <%= label_tag "Lista de Productos" %><br>
+    <%= select_tag :producto, options_for_select(@productos), prompt: "Selecciona un producto de la lista", :class => "form-control tamano" %>
   </div>
   <div class="field">
-    <%= select_tag :producto, options_for_select(@productos), prompt: "Selecciona un producto", :class => "form-control tamano" %>
+    <%= label_tag :cantidad %><br>
+    <%= text_field_tag :cantidad, nil,:class=>"form-control", :placeholder => "Captura la cantidad deseada", :required=>true %>
   </div>
+  
   
   
   <div class="actions">
@@ -138,7 +140,7 @@ var Total = React.createClass({
               
               return (
                 <span>
-                 <h1>Total $ {this.state.data}  </h1>   
+                 <h1>Total $ {this.state.data} + Envío $130 MXN </h1>   
                 </span>
               );
             }

@@ -3,7 +3,7 @@ class CreateProducts < ActiveRecord::Migration
     create_table :products do |t|
       t.string :codigo
       t.string :descripcion
-      t.string :costo
+      t.float  "costo",         :precision => 7, :scale => 2
 
       t.timestamps null: false
     end

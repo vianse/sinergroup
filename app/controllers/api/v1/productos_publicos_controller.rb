@@ -3,8 +3,9 @@ class Api::V1::ProductosPublicosController <ApplicationController
  def index
    @carrito = Cardpublico.where(:pedidoID => params[:pedido]).pluck(:precio)
    carrito = @carrito.map do |b|
-    b[1..3].to_i
+    b.to_f
    end
    render json: carrito.reduce(0, :+)
+   #render json: @carrito
   end
 end

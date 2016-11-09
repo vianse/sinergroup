@@ -67,8 +67,21 @@ ActiveRecord::Schema.define(version: 20161026010000) do
     t.string   "nombre"
     t.string   "correo"
     t.string   "telefono"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "direccion"
+    t.string   "calles"
+    t.string   "municipio"
+    t.string   "codigopostal"
+    t.string   "rfc"
+    t.string   "razonsocial"
+    t.string   "direccionfiscal"
+    t.string   "municipiofiscal"
+    t.string   "codigopostalfiscal"
+    t.string   "codigopromocional"
+    t.string   "comentarios"
+    t.string   "envioC"
+    t.string   "envioS"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "pedidos", force: :cascade do |t|
@@ -85,7 +98,7 @@ ActiveRecord::Schema.define(version: 20161026010000) do
   create_table "products", force: :cascade do |t|
     t.string   "codigo"
     t.string   "descripcion"
-    t.string   "costo"
+    t.float    "costo"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

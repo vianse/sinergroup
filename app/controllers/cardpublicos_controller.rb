@@ -17,13 +17,16 @@ class CardpublicosController < ApplicationController
     RestClient.post "https://api:key-e7d79c66e74391fdf48b657624f23ddc"\
     "@api.mailgun.net/v3/sandboxb9c2dadab0ea49f6b7130d1091646c59.mailgun.org/messages",
     :from => "Sistema de Pedidos <mailgun@sandboxb9c2dadab0ea49f6b7130d1091646c59.mailgun.org>",
+    :to => "krlos013@gmail.com",
     #:to => "proteina@sinergroup.com.mx",
-    :to => "proteina@sinergroup.com.mx",
     :subject => "Solicitud de Pedido",
     :html => (render_to_string(template: "../views/cardpublicos/email")).to_str
-    redirect_to "http://sinergroup.com.mx/"
+    redirect_to "/gracias"
   end
 
+  def gracias
+    
+  end
   # GET /cardpublicos/new
   def new
     @cardpublico = Cardpublico.new
@@ -39,7 +42,7 @@ class CardpublicosController < ApplicationController
   # POST /cardpublicos.json
 
   def crearcar
-    @car = Cardpublico.new(:pedidoID => params[:pedidoID], :producto=> params[:producto], :cantidad=> params[:cantidad], :precio => (Product.where(:descripcion => params[:producto]).pluck(:costo).first) * (params[:cantidad].to_i))
+    @car = Cardpublico.new(:pedidoID => params[:pedidoID], :producto=> params[:producto], :cantidad=> params[:cantidad], :precio => (Product.select(:costo).where(:descripcion => params[:producto]).pluck(:costo).first) * (params[:cantidad].to_f))
      respond_to do |format|
       if @car.save
         # @consultore.update(:access => true)

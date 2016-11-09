@@ -66,10 +66,11 @@
     <%= f.submit "Solicitar Pedido", :class=> "btn btn-success" %>
   </div>
   <div class="field">
-    <%= f.text_field :comentarios, :placeholder => "Escribe un comentario", :class=>"form-control" %>
+    <%= f.label "Necesitas que algunos de tus productos sean mezclados" %>
+    <%= f.text_field :comentarios, :placeholder => "Indicanos cuales ejem: Producto 1 10gr y Producto 2 500gr", :class=>"form-control" %>
   </div>
   <div class="field">
-    <%= f.select :envioC, options_for_select([["Enviar a cliente", "Enviar a cliente"], ["Enviar a socio", "Enviar a socio"]]), prompt: "Selecciona un tipo de envío", :class => "form-control", :required => true %>
+    <%= f.select :envioC, options_for_select([["Enviar a cliente", "Enviar a cliente"], ["Enviar a socio", "Enviar a socio"]]), :required => true, prompt: "Selecciona un tipo de envío", :class => "form-control" %>
   </div>
   <% end %>
   <div class="field">
@@ -95,12 +96,14 @@
     <%= hidden_field_tag :pedidoID, nil,:value => params[:id], :class=>"form-control" %>
   </div>
   <div class="field">
-    <%= label_tag :cantidad %><br>
-    <%= text_field_tag :cantidad, nil,:class=>"form-control", :required=>true %>
+     <%= label_tag "Lista de Productos" %>
+    <%= select_tag :productoID, options_for_select(@productos), prompt: "Selecciona un producto de la lista", :class => "form-control tamano" %>
   </div>
   <div class="field">
-    <%= select_tag :productoID, options_for_select(@productos), prompt: "Selecciona un producto", :class => "form-control tamano" %>
+    <%= label_tag :cantidad %><br>
+    <%= text_field_tag :cantidad, nil,:class=>"form-control", :required=>true, :placeholder => "Captura la cantidad deseada" %>
   </div>
+  
   <div class="field">
     <%= hidden_field_tag :costo,nil,:value=> Product.where(:descripcion => params[:pedidoID]).pluck(:costo).first, :class=>"form-control" %>
   </div>

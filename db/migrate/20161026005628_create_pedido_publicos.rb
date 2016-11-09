@@ -6,6 +6,20 @@ class CreatePedidoPublicos < ActiveRecord::Migration
       t.string :nombre
       t.string :correo
       t.string :telefono
+      t.string :direccion
+      t.string :calles
+      t.string :municipio
+      t.string :codigopostal
+      t.string :rfc
+      t.string :razonsocial
+      t.string :direccionfiscal
+      t.string :municipiofiscal
+      t.string :codigopostalfiscal
+      t.string :codigopromocional
+      t.string :comentarios
+      t.string :envioC
+      t.string :envioS
+
 
       t.timestamps null: false
     end

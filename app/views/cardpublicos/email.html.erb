@@ -30,6 +30,22 @@
 		<% end %>
 	</tbody>
 </table>
+<h5>Detalles del Pedido</h5>
+<div>Nombre del cliente: <%= PedidoPublico.where(:id => params[:pedidoID]).pluck(:nombre).first %></div>
+<div>Código Promocional: <%= PedidoPublico.where(:id => params[:pedidoID]).pluck(:codigopromocional).first %></div>
+<div>Correo electrónico: <%= PedidoPublico.where(:id => params[:pedidoID]).pluck(:correo).first %></div>
+<div>Télefono: <%= PedidoPublico.where(:id => params[:pedidoID]).pluck(:telefono).first %></div>
+<h5>Detalles de envío</h5>
+<div>Dirección de envío: <%= PedidoPublico.where(:id => params[:pedidoID]).pluck(:direccion).first %></div>
+<div>Entre que Calles: <%= PedidoPublico.where(:id => params[:pedidoID]).pluck(:calles).first %></div>
+<div>Municipio: <%= PedidoPublico.where(:id => params[:pedidoID]).pluck(:municipio).first %></div>
+<div>Código Postal: <%= PedidoPublico.where(:id => params[:pedidoID]).pluck(:codigopostal).first %></div>
 
+<h5>Datos de Facturación</h5>
+<div>Código Postal: <%= PedidoPublico.where(:id => params[:pedidoID]).pluck(:rfc).first %></div>
+<div>Razón Social: <%= PedidoPublico.where(:id => params[:pedidoID]).pluck(:razonsocial).first %></div>
+<div>Dirección Fiscal: <%= PedidoPublico.where(:id => params[:pedidoID]).pluck(:direccionfiscal).first %></div>
+<div>Municipio: <%= PedidoPublico.where(:id => params[:pedidoID]).pluck(:municipiofiscal).first %></div>
+<div>Código Postal: <%= PedidoPublico.where(:id => params[:pedidoID]).pluck(:codigopostalfiscal).first %></div>
 </body>
 </html>
